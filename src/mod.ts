@@ -54,16 +54,21 @@ const handlePages = async (url: URL, directory: string): Promise<Response> => {
 	});
 }
 
-const handler = async (req: Request, directory: string): Promise<Response> => {
+export const handler = async (req: Request, directory: string): Promise<Response> => {
 	const url = new URL(req.url);
 	
-	if (req.headers.get("accept")?.startsWith("text/html")) {
+	if (req.headers.get("accept")?.includes("text/html")) {
 		return await handlePages(url, directory);
 	}
 
 	return new Response("Nothing to see here", { status: 400 })
 }
 
+/**
+ * Serves files at in a specific folder
+ * @param {string} path - Path of the folder to serve
+ * @param {Options} options - Additional options
+*/
 export const serve = (path?: string, options?: Options) => {
 	httpServe((req) => handler(req, path || ""), options)
 }
