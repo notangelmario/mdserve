@@ -11,4 +11,5 @@ Instantly serve your web app
 - [ ] Support for custom HTML template
 - [ ] Provide executable
 - [ ] Add directory sidebar
+- [ ] Add support for building static files
 - [ ] ... more on the way
