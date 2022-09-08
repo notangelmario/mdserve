@@ -1,6 +1,6 @@
-import { join } from "path";
-import { serve as httpServe } from "server";
-import { CSS, render } from "gfm";
+import { join } from "./deps.ts";
+import { serve as httpServe } from "./deps.ts";
+import { gfmCSS, gfmRender } from "./deps.ts";
 import { splitPath } from "./utils.ts";
 import { Options } from "./types.ts";
 
@@ -23,7 +23,7 @@ const handlePages = async (url: URL, directory: string): Promise<Response> => {
 		return new Response("Not found", { status: 404 })
 	}
 
-	const body = render(fileContent)
+	const body = gfmRender(fileContent)
 
 	const html = `
 	<!DOCTYPE html>
@@ -36,7 +36,7 @@ const handlePages = async (url: URL, directory: string): Promise<Response> => {
 					max-width: 800px;
 					margin: 2rem auto;
 				}
-				${CSS}
+				${gfmCSS}
 			</style>
 		</head>
 		<body>

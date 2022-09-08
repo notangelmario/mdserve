@@ -1,8 +1,0 @@
-{
-	"imports": {
-		"path": "https://deno.land/std@0.154.0/path/mod.ts",
-		"server": "https://deno.land/std@0.154.0/http/server.ts",
-		"testing/": "https://deno.land/std@0.154.0/testing/",
-		"gfm": "https://deno.land/x/gfm@0.1.24/mod.ts"
-	}
-}
