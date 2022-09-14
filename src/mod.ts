@@ -31,10 +31,17 @@ const handlePages = async (url: URL, directory: string): Promise<Response> => {
 		<head>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="https://esm.sh/v94/normalize.css@8.0.1/es2022/normalize.css.css" />
 			<style>
+				* {
+					margin: 0;
+					padding: 0;
+				}
+
 				main {
 					max-width: 800px;
 					margin: 2rem auto;
+					padding: 0 1rem;
 				}
 				${CSS}
 			</style>
